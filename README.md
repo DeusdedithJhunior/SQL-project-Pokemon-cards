@@ -3,9 +3,7 @@
 ```md
 # SQL-Project-Pokemon-Cards
 
-Projeto completo de modelagem e implementação de um banco de dados SQL Server para um mini e‑commerce de cartas Pokémon TCG.  
-Inclui criação de banco, tabelas normalizadas, seeds idempotentes, views consolidadas e organização profissional de scripts.  
-Todos os arquivos foram desenvolvidos no VS Code com apoio do Microsoft Copilot.
+Projeto completo de modelagem e implementação de um banco de dados SQL Server para um mini e‑commerce de cartas Pokémon TCG. Inclui criação de banco, tabelas normalizadas, seeds idempotentes, views consolidadas e organização profissional de scripts. Todos os arquivos foram desenvolvidos no VS Code com apoio do Microsoft Copilot.
 
 ---
 
