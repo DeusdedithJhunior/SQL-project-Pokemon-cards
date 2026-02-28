@@ -1,5 +1,3 @@
-Claro! Aqui está o **README.md completo**, em **um único bloco**, pronto para copiar e colar no GitHub — tudo organizado, sem divisões externas.
-
 ***
 
 ```md
@@ -29,8 +27,6 @@ O resultado é uma estrutura robusta, ideal para estudos, portfólio e evoluçã
 
 ## 📦 Estrutura do Projeto
 
-```
-
 SQL-project-Pokemon-cards/
 │
 ├── db\_scripts/
@@ -51,26 +47,20 @@ SQL-project-Pokemon-cards/
 └── prompts/
 └── tcg-cards.txt
 
-```
-
 ---
 
 ## 🗄️ Banco de Dados
 
 O banco criado:
 
-```
-
 db\_tcgpokemon\_cards
-
-````
 
 Com suporte a UTF‑8:
 
-```sql
+sql
 CREATE DATABASE db_tcgpokemon_cards
 COLLATE Latin1_General_100_CI_AS_SC_UTF8;
-````
+
 
 ***
 
@@ -188,92 +178,3 @@ Este projeto demonstra como criar um banco relacional completo para um mini e‑
 
 Projeto aberto para estudo, melhoria e expansão.  
 Contribuições são bem‑vindas!
-
-````md
-# ⭐ Badge Pokémon personalizado
-
-https://img.shields.io/badge/Pokémon%20TCG-SQL%20Project-ffcb05?style=for-the-badge&logo=pokemon&logoColor=black
-
----
-
-# 📊 Diagrama ER — Pokémon TCG Database (Mermaid)
-
-```mermaid
-erDiagram
-    tbl_collections {
-        int collectionId PK
-        nvarchar collectionsSetName
-        date releaseDate
-        int totalCardsInCollection
-    }
-
-    tbl_types {
-        int typeId PK
-        nvarchar typeName
-    }
-
-    tbl_stages {
-        int stageId PK
-        nvarchar stageName
-    }
-
-    tbl_cards {
-        int cardId PK
-        int hp
-        nvarchar name
-        nvarchar info
-        nvarchar attack
-        nvarchar damage
-        nvarchar weak
-        nvarchar resist
-        int retreat
-        nvarchar cardNumberInCollection
-        int collectionId FK
-        int typeId FK
-        int stageId FK
-    }
-
-    tbl_collections ||--o{ tbl_cards : "collectionId"
-    tbl_types ||--o{ tbl_cards : "typeId"
-    tbl_stages ||--o{ tbl_cards : "stageId"
-````
-
-***
-
-# ⚙️ GitHub Actions — SQL Validator (YAML)
-
-Este workflow valida automaticamente *todos os arquivos `.sql`* do repositório usando o **tsqllint**.
-
-➡ Basta criar o arquivo:
-
-    .github/workflows/sql-lint.yml
-
-E colar o conteúdo abaixo:
-
-```yaml
-name: SQL Validation
-
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-
-jobs:
-  sql-lint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Install tsqllint
-        run: |
-          dotnet tool install --global tsqllint
-
-      - name: Run SQL Lint
-        run: |
-          tsqllint --init
-          tsqllint **/*.sql
-```
-
